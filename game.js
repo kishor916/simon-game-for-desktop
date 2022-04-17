@@ -59,7 +59,7 @@ function animatePress(currentColor) {
   }, 100);
 }
 
-//function to check the user color patters every vtime they chose the color. 
+//function to check the user color patters every vtime they chose the color.
 function checkAnswer(lastcolor) {
   if (gamePattern[lastcolor] === userClickedPattern[lastcolor]) {
     console.log("sucess");
@@ -77,19 +77,16 @@ function checkAnswer(lastcolor) {
     $("body").addClass("game-over");
     setTimeout(function() {
       $("body").removeClass("game-over");
-    }, 200);
-    $("h1").text("Game Over, Press Any Key to Restart");
-    startOver();
-  }
+    }, 4000);
+    $("h1").text("Game Over, Game will be automatically reloded");
+    $(document).click(function (){
+      setTimeout(function() {
+        location.reload();
+      }, 4000);
 
-
+  });
 }
 
 
-//this function will restart the game with any press of the key bord by the user\
-function startOver(){
-  level=0;
-  gamePattern = [];
-  started = false;
 
 }
